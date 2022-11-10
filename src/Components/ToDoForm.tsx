@@ -32,9 +32,11 @@ const ToDoForm= ({setList}:ToDoFormProps) => {
         content:formInput,
         isDone:false
       }
-      console.log(task)
-      update(setList,task,"push")
+      if(task?.content.length>=3) {
+        update(setList,task,"push")
       form.setFieldValue('formInput',"")
+      }
+      
     } catch (errorInfo) {
       console.log('Failed:', errorInfo);
     }
