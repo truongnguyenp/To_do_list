@@ -15,7 +15,7 @@ const buttonItemLayout = {
 const ToDoForm= ({setList}:ToDoFormProps) => {
   const [form] = Form.useForm();
   const formInput = Form.useWatch('formInput',form)
-  const [formStatus,setFormStatus] = React.useState<boolean>(true)
+  const [formStatus,setFormStatus] = React.useState<boolean>(false)
   const submitRef = React.useRef<HTMLButtonElement>(null)
   const onKeyEvent = (event:KeyboardEvent<HTMLInputElement>) => {
     console.log("ok")
