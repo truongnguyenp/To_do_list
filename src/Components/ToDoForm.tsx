@@ -15,7 +15,7 @@ const buttonItemLayout = {
 const ToDoForm= ({setList}:ToDoFormProps) => {
   const [form] = Form.useForm();
   const formInput = Form.useWatch('formInput',form)
-  const [formStatus,setFormStatus] = React.useState<boolean>(false)
+  const [formStatus,setFormStatus] = React.useState<boolean>(true)
   const submitRef = React.useRef<HTMLButtonElement>(null)
   const onKeyEvent = (event:KeyboardEvent<HTMLInputElement>) => {
     console.log("ok")
@@ -46,10 +46,11 @@ const ToDoForm= ({setList}:ToDoFormProps) => {
       else setFormStatus(false)
   }
   return(
-    <Form {...formItemLayout} form={form} className="toDoForm">
+    <Form {...formItemLayout}  form={form} className="toDoForm">
     <Form.Item
      name = "formInput" 
       label="To do"
+      
       validateStatus={formStatus? "":"error"}
       help={formStatus? "":"To do content should be greater than 3"}
       className="formInput center"
